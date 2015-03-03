@@ -35,6 +35,9 @@ require "pagseguro/transaction/serializer"
 require "pagseguro/pre_approval"
 require "pagseguro/pre_approval/response"
 require "pagseguro/pre_approval/serializer"
+require "pagseguro/pre_approval_canceling"
+require "pagseguro/pre_approval_canceling/serializer"
+require "pagseguro/pre_approval_canceling/response"
 
 I18n.load_path += Dir[File.expand_path("../../locales/*.yml", __FILE__)]
 
