@@ -1,6 +1,9 @@
 require "spec_helper"
 
 describe PagSeguro::PreApprovalCanceling do
+  it_assigns_attribute :date
+  it_assigns_attribute :status
+
   describe ".cancel" do
     it "cancel a pre approval by the given notificationCode" do
         allow(PagSeguro::PreApprovalCanceling).to receive(:load_from_response)

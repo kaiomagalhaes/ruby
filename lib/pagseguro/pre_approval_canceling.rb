@@ -3,6 +3,9 @@ module PagSeguro
     include Extensions::MassAssignment
     include Extensions::EnsureType
 
+    attr_accessor :status
+    attr_accessor :date
+
     def self.cancel(code)
       load_from_response Request.get("pre-approvals/cancel/#{code}")
     end
