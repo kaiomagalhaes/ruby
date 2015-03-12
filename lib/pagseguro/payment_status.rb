@@ -27,7 +27,8 @@ module PagSeguro
 
     # Return a readable status.
     def status
-      STATUSES.fetch(id.to_s) { raise "PagSeguro::PaymentStatus#id isn't mapped" }
+      # STATUSES.fetch(id.to_s) { raise "PagSeguro::PaymentStatus#id isn't mapped #{id}" }
+      STATUSES.key(id.to_s)
     end
   end
 end

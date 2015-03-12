@@ -28,6 +28,12 @@ module PagSeguro
         cancellation_source = xml.css("cancellationSource")
         data[:cancellation_source] = cancellation_source.text if cancellation_source.any?
 
+
+        p 'xml.css("paymentMethod > type").text'
+        p xml.css("paymentMethod > type").text
+        p 'xml.css("paymentMethod > code").text'
+        p xml.css("paymentMethod > code").text
+        
         data[:payment_method] = {
           type_id: xml.css("paymentMethod > type").text,
           code: xml.css("paymentMethod > code").text
