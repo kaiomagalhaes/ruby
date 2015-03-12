@@ -5,6 +5,8 @@ module PagSeguro
 
       def initialize(xml)
         @xml = xml
+        p "ABC"
+        p xml
       end
 
       def serialize
@@ -33,7 +35,7 @@ module PagSeguro
         p xml.css("paymentMethod > type").text
         p 'xml.css("paymentMethod > code").text'
         p xml.css("paymentMethod > code").text
-        
+
         data[:payment_method] = {
           type_id: xml.css("paymentMethod > type").text,
           code: xml.css("paymentMethod > code").text
