@@ -5,6 +5,7 @@ module PagSeguro
 
     attr_accessor :status
     attr_accessor :date
+    attr_reader :errors
 
     def self.cancel(code)
       load_from_response Request.get("pre-approvals/cancel/#{code}")
@@ -22,6 +23,11 @@ module PagSeguro
     # Serialize the XML object.
     def self.load_from_xml(xml) # :nodoc:
       new Serializer.new(xml).serialize
+    end
+
+    private
+    def after_initialize
+      @errors = Errors.new
     end
   end
 end
